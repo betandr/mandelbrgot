@@ -2,6 +2,7 @@
 package main
 
 import (
+	"fmt"
 	"image"
 	"image/color"
 	"image/png"
@@ -18,6 +19,8 @@ func main() {
 
 	//!+http
 	handler := func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "image/png")
+
 		r.ParseForm()
 		xMin, xMinErr := strconv.Atoi(strings.Join(r.Form["xmin"], ""))
 		if xMinErr != nil {
@@ -42,6 +45,10 @@ func main() {
 
 		draw(w, xMin, yMin, xMax, yMax, z)
 	}
+
+	http.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, "OK")
+	})
 
 	http.HandleFunc("/", handler)
 	log.Fatal(http.ListenAndServe(":8888", nil))
