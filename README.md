@@ -1,5 +1,7 @@
 # Mandelbr-Go-t
 
+[![Build Status](https://drone.andr.io/api/badges/betandr/mandelbrgot/status.svg)](https://drone.andr.io/betandr/mandelbrgot)
+
 Emits a mandelbrot set as a PNG. Uses a logarithmic colorscheme from blue to green.
 
 ![Mandelbrot Set](images/mandelbrot.png)
