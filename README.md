@@ -5,7 +5,7 @@
 Emits a mandelbrot set as a PNG. Uses a logarithmic colorscheme from blue to green.
 
 ![Mandelbrot Set](images/mandelbrot.png)
-_http://localhost:8000/?xmax=-1.4&xmin=-2.47&ymax=3.03&ymin=2&zoom=50_
+`http://localhost:8000/?xmax=-1.4&xmin=-2.47&ymax=3.03&ymin=2&zoom=50`
 
 ```
 func mandelbrot(z complex128) color.Color {
